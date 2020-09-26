@@ -53,7 +53,29 @@ gpt2_large = ChattingGPT2("gpt2-large")
 gpt2_xl = ChattingGPT2("gpt2-xl")
 ```
 
-## Custom Settings
+## Predefined Methods
+
+Below are predfined methods that may be used to determine the output. 
+To learn more, about these methods, please visit this [webpage](https://huggingface.co/blog/how-to-generate).
+
+1. "greedy"
+2. "beam-search"
+3. "generic-sampling"
+4. "top-k-sampling"
+5. "top-p-nucleus-sampling"
+
+```python
+import chattingtransformer import ChattingGPT2
+
+greedy = ChattingGPT2("distilgpt2", method = "greedy")
+beam_search = ChattingGPT2("distilgpt2", method = "beam-search")
+generic_sampling = ChattingGPT2("distilgpt2", method = "generic-sampling")
+top_k_sampling = ChattingGPT2("distilgpt2", method = "top-k-sampling")
+top_p_nucleus_sampling = ChattingGPT2("distilgpt2", method = "top-p-nucleus-sampling")
+```
+
+
+## Custom Method
 
 
 Below are the default values for the parameters you may adjust to modify how the model generates text. For more information about the purpose of each parameter, please visit Hugging Face's Transformer documentation on this  [webpage](https://huggingface.co/transformers/main_classes/model.html#generative-models).
