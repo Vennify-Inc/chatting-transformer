@@ -33,7 +33,7 @@ class ChattingGPT2():
                               "gpt2-xl", ]
     __is_valid = False
 
-    def __init__(self, model_name="gpt2"):
+    def __init__(self, model_name="distilgpt2"):
 
         # show only happytransformer logs
         handler = logging.StreamHandler()
@@ -52,7 +52,7 @@ class ChattingGPT2():
             download_name = model_name
         if download_name not in self.__private_valid_models:
             self.logger.error("Please enter a valid model name. "
-                              "For example, \"gpt2\" or \"gpt2-xl\"")
+                              "For example, \"distilgpt2\" or \"gpt2-xl\"")
 
         else:
             self.logger.info("Loading \"%s\"...", model_name)
@@ -68,7 +68,7 @@ class ChattingGPT2():
     def __check_gen_text_is_val(self, text, method):
         if not self.__is_valid:
             self.logger.error("Please enter a valid model name. "
-                              "For example, \"gpt2\" or \"gpt2-xl\"")
+                              "For example, \"distilgpt2\" or \"gpt2-xl\"")
             return False
         elif not isinstance(text, str):
             self.logger.error("Please enter a int for the max_length parameter")
