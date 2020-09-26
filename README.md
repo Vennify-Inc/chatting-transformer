@@ -35,11 +35,11 @@ print(results) #outputs: *actual output here*
 | Model         | Parameters   |      Size        | 
 |------------------------------|------------------|-----------------|
 | tiny-gpt2    |      ---      |      2.51 MB     | 
-| distilgpt2   |      66M      |      353 MB      | 
-| gpt2         |      134M     |      548 MB      | 
-| gpt2-medium  |      335M     |      1.52 GB     | 
-| gpt2-large   |      774M     |      3.25G       | 
-| gpt2-xl      |      1.5B     |                  |      
+| distilgpt2   |      66  M    |      353  MB     | 
+| gpt2         |      134 M    |      548  MB     | 
+| gpt2-medium  |      335 M    |      1.52 GB     | 
+| gpt2-large   |      774 M    |      3.25 GB     | 
+| gpt2-xl      |      1.5 B    |      6.43 GB     |      
 
 
 ```python
