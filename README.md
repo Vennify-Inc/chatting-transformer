@@ -23,8 +23,8 @@ pip install chattingtransformer
 import chattingtransformer import ChattingGPT2
 
 
-model_name = "gpt2" 
-gpt2 = ChattingGPT2("gpt2")
+model_name = "distilgpt2" 
+gpt2 = ChattingGPT2(model_name)
 
 text = "I think therefore I" 
 results = gpt2.generate_text(text) 
@@ -45,8 +45,8 @@ print(results) #outputs: *actual output here*
 ```python
 import chattingtransformer import ChattingGPT2
 
-tiny_gpt2 = ChattingGPT2("tiny-gpt2")
-distil_gpt2 = ChattingGPT2("distilgpt2")
+gpt2_tiny = ChattingGPT2("tiny-gpt2")
+gpt2_distil = ChattingGPT2("distilgpt2")
 gpt2 = ChattingGPT2("gpt2")
 gpt2_medium = ChattingGPT2("gpt2-medium")
 gpt2_large = ChattingGPT2("gpt2-large")
@@ -95,7 +95,7 @@ settings =  {
   'bad_words_ids': None,  
   "num_return_sequences": 1,  
 }
-gpt2 = ChattingGPT2("gpt2",  method="custom", custom_settings=settings))
+gpt2 = ChattingGPT2("distilgpt2",  method="custom", custom_settings=settings))
 ```
 
 ### Modify Select Settings 
@@ -108,7 +108,7 @@ settings =  {
   "min_length": 100,   
  
 }
-gpt2 = ChattingGPT2("gpt2",  method="custom", custom_settings=settings))
+gpt2 = ChattingGPT2("distilgpt2",  method="custom", custom_settings=settings))
 ```
 
 
