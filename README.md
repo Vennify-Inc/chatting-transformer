@@ -32,14 +32,14 @@ results = gpt2.generate_text(text)
 print(results) #outputs: *actual output here*
 ```
 ## Available Models
-| Model         | Parameters |      Size   | 
-|-----------------------------|------------|-----------------|
-| tiny-gpt2    |              |            | 
-| distilgpt2   |              |            | 
-| gpt2         |              |            | 
-| gpt2-medium  |              |            | 
-| gpt2-large   |              |            | 
-| gpt2-xl      |              |            |      
+| Model         | Parameters   |      Size        | 
+|------------------------------|------------------|-----------------|
+| tiny-gpt2    |      ---      |      2.51 MB     | 
+| distilgpt2   |      66M      |      353 MB      | 
+| gpt2         |      134M     |      548 MB      | 
+| gpt2-medium  |      335M     |      1.52 GB     | 
+| gpt2-large   |      774M     |      3.25G       | 
+| gpt2-xl      |      1.5B     |                  |      
 
 
 ```python
