@@ -1,5 +1,4 @@
 
-
 POSSIBLE_METHODS = ["greedy", "beam-search", "generic-sampling",
                     "top-k-sampling", "top-p-nucleus-sampling", "custom"]
 
