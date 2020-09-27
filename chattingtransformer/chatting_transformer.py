@@ -18,18 +18,13 @@ class ChattingGPT2():
         4. Fully customizable text generation parameters
     """
 
-    valid_models = ["tiny-gpt2",
+    valid_models = [
                     "gpt2",
                     "gpt2-medium",
                     "gpt2-large",
                     "gpt2-xl"]
 
-    # the user may enter tiny-gpt2 instead of sshleifer/tiny-gpt2
-    __private_valid_models = ["sshleifer/tiny-gpt2",
-                              'gpt2',
-                              "gpt2-medium",
-                              'gpt2-large',
-                              "gpt2-xl", ]
+
     __is_valid = False
 
     def __init__(self, model_name="gpt2"):
@@ -44,20 +39,16 @@ class ChattingGPT2():
             handlers=[handler]
         )
         self.logger = logging.getLogger(__name__)
-        if model_name == "tiny-gpt2":
-            download_name = "sshleifer/tiny-gpt2"
 
-        else:
-            download_name = model_name
-        if download_name not in self.__private_valid_models:
+        if model_name not in self.valid_models:
             self.logger.error("Please enter a valid model name. "
                               "For example, \"distilgpt2\" or \"gpt2-xl\"")
 
         else:
             self.logger.info("Loading \"%s\"...", model_name)
-            self._generation_tokenizer = AutoTokenizer.from_pretrained(download_name)
+            self._generation_tokenizer = AutoTokenizer.from_pretrained(model_name)
             pad_token_id = self._generation_tokenizer.eos_token_id
-            self._generation_model = AutoModelForCausalLM.from_pretrained(download_name,
+            self._generation_model = AutoModelForCausalLM.from_pretrained(model_name,
                                                                           pad_token_id=pad_token_id)
             self.logger.info("Done loading \"%s\"", model_name)
 

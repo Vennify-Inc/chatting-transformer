@@ -34,7 +34,6 @@ print(results) #outputs: *actual output here*
 ## Available Models
 | Model         | Parameters   |      Size        | 
 |------------------------------|------------------|-----------------|
-| tiny-gpt2    |      ---      |      2.51 MB     | 
 | gpt2         |      134 M    |      548  MB     | 
 | gpt2-medium  |      335 M    |      1.52 GB     | 
 | gpt2-large   |      774 M    |      3.25 GB     | 
@@ -44,7 +43,6 @@ print(results) #outputs: *actual output here*
 ```python
 import chattingtransformer import ChattingGPT2
 
-gpt2_tiny = ChattingGPT2("tiny-gpt2")
 gpt2 = ChattingGPT2("gpt2")
 gpt2_medium = ChattingGPT2("gpt2-medium")
 gpt2_large = ChattingGPT2("gpt2-large")
