@@ -23,7 +23,7 @@ pip install chattingtransformer
 import chattingtransformer import ChattingGPT2
 
 
-model_name = "distilgpt2" 
+model_name = "gpt2" 
 gpt2 = ChattingGPT2(model_name)
 
 text = "I think therefore I" 
@@ -35,7 +35,6 @@ print(results) #outputs: *actual output here*
 | Model         | Parameters   |      Size        | 
 |------------------------------|------------------|-----------------|
 | tiny-gpt2    |      ---      |      2.51 MB     | 
-| distilgpt2   |      66  M    |      353  MB     | 
 | gpt2         |      134 M    |      548  MB     | 
 | gpt2-medium  |      335 M    |      1.52 GB     | 
 | gpt2-large   |      774 M    |      3.25 GB     | 
@@ -46,7 +45,6 @@ print(results) #outputs: *actual output here*
 import chattingtransformer import ChattingGPT2
 
 gpt2_tiny = ChattingGPT2("tiny-gpt2")
-gpt2_distil = ChattingGPT2("distilgpt2")
 gpt2 = ChattingGPT2("gpt2")
 gpt2_medium = ChattingGPT2("gpt2-medium")
 gpt2_large = ChattingGPT2("gpt2-large")
@@ -67,11 +65,11 @@ To learn more, about these methods, please visit this [webpage](https://huggingf
 ```python
 import chattingtransformer import ChattingGPT2
 
-greedy = ChattingGPT2("distilgpt2", method = "greedy")
-beam_search = ChattingGPT2("distilgpt2", method = "beam-search")
-generic_sampling = ChattingGPT2("distilgpt2", method = "generic-sampling")
-top_k_sampling = ChattingGPT2("distilgpt2", method = "top-k-sampling")
-top_p_nucleus_sampling = ChattingGPT2("distilgpt2", method = "top-p-nucleus-sampling")
+greedy = ChattingGPT2("gpt2", method = "greedy")
+beam_search = ChattingGPT2("gpt2", method = "beam-search")
+generic_sampling = ChattingGPT2("gpt2", method = "generic-sampling")
+top_k_sampling = ChattingGPT2("gpt2", method = "top-k-sampling")
+top_p_nucleus_sampling = ChattingGPT2("gpt2", method = "top-p-nucleus-sampling")
 ```
 
 
@@ -115,7 +113,7 @@ settings =  {
   "no_repeat_ngram_size": 2,  
   'bad_words_ids': None,  
 }
-gpt2 = ChattingGPT2("distilgpt2",  method="custom", custom_settings=settings))
+gpt2 = ChattingGPT2("gpt2",  method="custom", custom_settings=settings))
 ```
 
 ### Modify Select Settings 
@@ -128,7 +126,7 @@ settings =  {
   "min_length": 100,   
  
 }
-gpt2 = ChattingGPT2("distilgpt2",  method="custom", custom_settings=settings))
+gpt2 = ChattingGPT2("gpt2",  method="custom", custom_settings=settings))
 ```
 
 

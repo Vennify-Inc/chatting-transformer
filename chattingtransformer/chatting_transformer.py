@@ -19,7 +19,6 @@ class ChattingGPT2():
     """
 
     valid_models = ["tiny-gpt2",
-                    "distilgpt2",
                     "gpt2",
                     "gpt2-medium",
                     "gpt2-large",
@@ -27,13 +26,13 @@ class ChattingGPT2():
 
     # the user may enter tiny-gpt2 instead of sshleifer/tiny-gpt2
     __private_valid_models = ["sshleifer/tiny-gpt2",
-                              "distilgpt2", "gpt2",
+                              'gpt2',
                               "gpt2-medium",
                               'gpt2-large',
                               "gpt2-xl", ]
     __is_valid = False
 
-    def __init__(self, model_name="distilgpt2"):
+    def __init__(self, model_name="gpt2"):
 
         # show only happytransformer logs
         handler = logging.StreamHandler()
