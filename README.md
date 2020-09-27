@@ -61,12 +61,13 @@ To learn more, about these methods, please visit this [webpage](https://huggingf
 
 ```python
 import chattingtransformer import ChattingGPT2
-
-greedy = ChattingGPT2("gpt2", method = "greedy")
-beam_search = ChattingGPT2("gpt2", method = "beam-search")
-generic_sampling = ChattingGPT2("gpt2", method = "generic-sampling")
-top_k_sampling = ChattingGPT2("gpt2", method = "top-k-sampling")
-top_p_nucleus_sampling = ChattingGPT2("gpt2", method = "top-p-nucleus-sampling")
+gpt2 = ChattingGPT2("gpt2")
+text = "I think therefore I "
+greedy_output = gpt2.generate_text(text, method = "greedy")
+beam_search_output= gpt2.generate_text(text, method = "beam-search")
+generic_sampling_output = gpt2.generate_text(text, method = "generic-sampling")
+top_k_sampling_output = gpt2.generate_text(text, method = "top-k-sampling")
+top_p_nucleus_sampling = gpt2.generate_text(text, method = "top-p-nucleus-sampling")
 ```
 
 
@@ -110,7 +111,11 @@ settings =  {
   "no_repeat_ngram_size": 2,  
   'bad_words_ids': None,  
 }
-gpt2 = ChattingGPT2("gpt2",  method="custom", custom_settings=settings))
+gpt2 = ChattingGPT2("gpt2")
+text = "I think therefore I "
+
+greedy_output = gpt2.generate_text(text, method = "custom", custom_settings = settings)
+
 ```
 
 ### Modify Select Settings 
@@ -123,8 +128,10 @@ settings =  {
   "min_length": 100,   
  
 }
-gpt2 = ChattingGPT2("gpt2",  method="custom", custom_settings=settings))
-```
+gpt2 = ChattingGPT2("gpt2")
+text = "I think therefore I "
+
+greedy_output = gpt2.generate_text(text, method = "custom", custom_settings = settings)```
 
 
 ## License
