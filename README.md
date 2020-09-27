@@ -5,7 +5,6 @@
 # Chatting Transformer
 ### Easy text generation using state of the art NLP models.
 [![License: Apache](https://img.shields.io/badge/License-Apache-green.svg)](https://opensource.org/licenses/Apache-2.0)
-[![Python 3.6](https://img.shields.io/badge/python-3.6-blue.svg)](https://www.python.org/downloads/release/python-360/)
 
 Chatting Transformer is a Python library for generating text using GPT2. GPT-2 is a language model that was developed by OpenAI that specializes in generating text. By using Chatting Transformer, you can implement and use this model with just two lines of code. 
 
