@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="assets/logo.png" height="200">
+  <img src="assets/vennify_ai_logo.jpg" height="200">
 </div>
 
 # Chatting Transformer
