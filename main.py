@@ -2,21 +2,33 @@ from chattingtransformer import ChattingGPT2
 
 def main():
 
-    gpt2 = ChattingGPT2("gpt2")
+    gpt2 = ChattingGPT2(model_name="gpt2")
 
-    text = "I think therefore I  "
-
-    default_settings = {
-        "min_length": 2,
-        "do_sample": False,
-        "early_stopping": False,
-        "num_beams": 1,
+    text = "On the first day of school I "
 
 
-    }
-    results = gpt2.generate_text(text, method="custom", custom_settings=default_settings)
-    print(text)
-    print(results)
+
+    results = gpt2.generate_text(text, method="greedy")
+    print("greedy: ", results)
+    print("----------------------------------------------------------------------------")
+    results = gpt2.generate_text(text, method="beam-search")
+    print("beam-search: ", results)
+
+    print("----------------------------------------------------------------------------")
+
+    results = gpt2.generate_text(text, method="generic-sampling")
+    print("generic-sampling ", results)
+    print("----------------------------------------------------------------------------")
+
+    results = gpt2.generate_text(text, method="top-k-sampling")
+    print("top-k-sampling: ", results)
+    print("----------------------------------------------------------------------------")
+
+    results = gpt2.generate_text(text, method="top-p-nucleus-sampling")
+    print("top-p-nucleus-sampling: ", results)
+
+
+
 
 
 if __name__ == "__main__":

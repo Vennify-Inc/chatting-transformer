@@ -4,19 +4,18 @@ POSSIBLE_METHODS = ["greedy", "beam-search", "generic-sampling",
                     "top-k-sampling", "top-p-nucleus-sampling", "custom"]
 
 DEFAULT_SETTINGS = {
-    "max_length": 100,
+    "max_length": 60,
     "min_length":  10,
     "do_sample": False,
     "early_stopping": False,
     "num_beams": 1,
-    "temperature": 1,
+    "temperature": 0.65,
     "top_k": 50,
     "top_p": 1.0,
     "repetition_penalty": 1,
     "length_penalty": 1,
     "no_repeat_ngram_size": 2,
     'bad_words_ids': None,
-    "num_return_sequences": 1,
 }
 
 
