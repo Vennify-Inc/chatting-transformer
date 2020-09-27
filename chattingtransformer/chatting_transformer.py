@@ -82,7 +82,7 @@ class ChattingGPT2():
 
         return True
 
-    def generate_text(self, text, combine=False, method="top-k-sampling", custom_settings=None):
+    def generate_text(self, text, combine=True, method="top-k-sampling", custom_settings=None):
         """
         :param text: starting text that the model uses to generate text with.
         :param: combine: if true, the starting text will be concatenated with the output.
@@ -112,7 +112,6 @@ class ChattingGPT2():
                                                      length_penalty=settings['length_penalty'],
                                                      no_repeat_ngram_size=settings['no_repeat_ngram_size'],
                                                      bad_words_ids=settings['bad_words_ids'],
-                                                     num_return_sequences=settings['num_return_sequences']
                                                      )
             result = self._generation_tokenizer.decode(output[0], skip_special_tokens=True)
             final_result = self.__gt_post_processing(result, text, combine)

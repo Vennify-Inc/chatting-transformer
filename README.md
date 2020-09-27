@@ -70,7 +70,6 @@ Below are the default values for the parameters you may adjust to modify how the
  length_penalty: 
   no_repeat_ngram_size: 
   bad_words_ids: 
-  num_return_sequences: 
 
 
 
@@ -93,7 +92,6 @@ settings =  {
   "length_penalty": 1,  
   "no_repeat_ngram_size": 2,  
   'bad_words_ids': None,  
-  "num_return_sequences": 1,  
 }
 gpt2 = ChattingGPT2("distilgpt2",  method="custom", custom_settings=settings))
 ```
