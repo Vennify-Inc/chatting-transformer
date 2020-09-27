@@ -14,7 +14,7 @@ class ChattingGPT2():
     Key Features:
         1. Initialize a GPT2 model with just one line of code.
         2. Generate text in a single line of code with the your GPT2 model
-        3. Select 1 of 6 GPT2 models.
+        3. Select 1 of 4 GPT2 models.
         4. Fully customizable text generation parameters
     """
 
@@ -42,7 +42,7 @@ class ChattingGPT2():
 
         if model_name not in self.valid_models:
             self.logger.error("Please enter a valid model name. "
-                              "For example, \"distilgpt2\" or \"gpt2-xl\"")
+                              "For example, \"gpt2\" or \"gpt2-xl\"")
 
         else:
             self.logger.info("Loading \"%s\"...", model_name)
@@ -58,7 +58,7 @@ class ChattingGPT2():
     def __check_gen_text_is_val(self, text, method):
         if not self.__is_valid:
             self.logger.error("Please enter a valid model name. "
-                              "For example, \"distilgpt2\" or \"gpt2-xl\"")
+                              "For example, \"gpt2\" or \"gpt2-xl\"")
             return False
         elif not isinstance(text, str):
             self.logger.error("Please enter a int for the max_length parameter")
@@ -67,7 +67,7 @@ class ChattingGPT2():
             self.logger.error("The text input must have at least one character")
             return False
         elif method not in POSSIBLE_METHODS:
-            self.logger.error("Please enter a valid method name")
+            self.logger.error("Please enter a valid method name, for example \"top-k-sampling\"")
             return False
 
         return True
@@ -106,7 +106,6 @@ class ChattingGPT2():
             result = self._generation_tokenizer.decode(output[0], skip_special_tokens=True)
             final_result = self.__gt_post_processing(result, text, combine)
 
-
             return final_result
 
         else:
@@ -115,12 +114,12 @@ class ChattingGPT2():
 
     def __gt_post_processing(self, result, text, combine):
         """
-        A method for post processing the result. More features will be added later.
+        A method for processing the output of the model. More features will be added later.
 
         :param result: result the output of the model after being decoded
-        :param text:  The original input to generate_text
+        :param text:  the original input to generate_text
         "parm combine: if true, returns  text and result concatenate together.
-        :return: returns to text after going through any post-processing
+        :return: returns to text after going through  post-processing
         """
 
         if combine:
