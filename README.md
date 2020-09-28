@@ -26,9 +26,9 @@ model_name = "gpt2"
 gpt2 = ChattingGPT2(model_name)
 
 text = "In 10 years, AI will " 
-results = gpt2.generate_text(text) 
+result = gpt2.generate_text(text) 
 
-print(results) # Outputs: In 10 years, AI will  have revolutionized the way we interact with the world...
+print(result) # Outputs: In 10 years, AI will  have revolutionized the way we interact with the world...
 ```
 ## Available Models
 | Model         | Parameters   |      Size        | 
@@ -115,7 +115,7 @@ settings =  {
 gpt2 = ChattingGPT2("gpt2")
 text = "I think therefore I "
 
-greedy_output = gpt2.generate_text(text, method = "custom", custom_settings = settings)
+result = gpt2.generate_text(text, method = "custom", custom_settings = settings)
 
 ```
 
@@ -132,7 +132,7 @@ settings =  {
 gpt2 = ChattingGPT2("gpt2")
 text = "I think therefore I "
 
-greedy_output = gpt2.generate_text(text, method = "custom", custom_settings = settings)```
+result = gpt2.generate_text(text, method = "custom", custom_settings = settings)```
 ```
 
 
