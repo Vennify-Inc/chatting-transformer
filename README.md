@@ -19,7 +19,7 @@ pip install chattingtransformer
 ## Basic Usage
 
 ```python
-import chattingtransformer import ChattingGPT2
+from chattingtransformer import ChattingGPT2
 
 
 model_name = "gpt2" 
@@ -40,7 +40,7 @@ print(results) # Outputs: In 10 years, AI will  have revolutionized the way we 
 
 
 ```python
-import chattingtransformer import ChattingGPT2
+from chattingtransformer import ChattingGPT2
 
 gpt2 = ChattingGPT2("gpt2")
 gpt2_medium = ChattingGPT2("gpt2-medium")
@@ -60,7 +60,7 @@ To learn more, about these methods, please visit this [webpage](https://huggingf
 5. "top-p-nucleus-sampling"
 
 ```python
-import chattingtransformer import ChattingGPT2
+from chattingtransformer import ChattingGPT2
 
 gpt2 = ChattingGPT2("gpt2")
 text = "I think therefore I "
@@ -96,7 +96,7 @@ Below are the default values for the parameters you may adjust to modify how the
 
 You have the ability to modify all of the default text generation parameters at once as shown below. 
 ```python
-import chattingtransformer import ChattingGPT2
+from chattingtransformer import ChattingGPT2
 
 settings =  {  
   "max_length": 100,  
@@ -122,7 +122,7 @@ greedy_output = gpt2.generate_text(text, method = "custom", custom_settings = se
 ### Modify Select Settings 
 You may only modify a subset of the settings. The rest of the parameters will use their default settings. 
 ```python
-import chattingtransformer import ChattingGPT2
+from chattingtransformer import ChattingGPT2
 
 settings =  {  
   "max_length": 200,  
