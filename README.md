@@ -133,7 +133,6 @@ gpt2 = ChattingGPT2("gpt2")
 text = "I think therefore I "
 
 greedy_output = gpt2.generate_text(text, method = "custom", custom_settings = settings)```
+```
 
 
-## License
-[Apache 2.0](https://www.apache.org/licenses/LICENSE-2.0)
