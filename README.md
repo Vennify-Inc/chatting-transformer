@@ -25,10 +25,10 @@ import chattingtransformer import ChattingGPT2
 model_name = "gpt2" 
 gpt2 = ChattingGPT2(model_name)
 
-text = "I think therefore I" 
+text = "In 10 years, AI will " 
 results = gpt2.generate_text(text) 
 
-print(results) #outputs: *actual output here*
+print(results) # Outputs: In 10 years, AI will  have revolutionized the way we interact with the world...
 ```
 ## Available Models
 | Model         | Parameters   |      Size        | 
@@ -61,13 +61,14 @@ To learn more, about these methods, please visit this [webpage](https://huggingf
 
 ```python
 import chattingtransformer import ChattingGPT2
+
 gpt2 = ChattingGPT2("gpt2")
 text = "I think therefore I "
 greedy_output = gpt2.generate_text(text, method = "greedy")
 beam_search_output= gpt2.generate_text(text, method = "beam-search")
 generic_sampling_output = gpt2.generate_text(text, method = "generic-sampling")
 top_k_sampling_output = gpt2.generate_text(text, method = "top-k-sampling")
-top_p_nucleus_sampling = gpt2.generate_text(text, method = "top-p-nucleus-sampling")
+top_p_nucleus_sampling_output = gpt2.generate_text(text, method = "top-p-nucleus-sampling")
 ```
 
 
