@@ -19,18 +19,18 @@ DEFAULT_SETTINGS = {
 
 
 def __get_greedy_settings():
-    return DEFAULT_SETTINGS
+    return DEFAULT_SETTINGS.copy()
 
 
 def __get_beam_settings():
-    settings = DEFAULT_SETTINGS
+    settings = DEFAULT_SETTINGS.copy()
     settings["num_beams"] = 5
     settings["early_stopping"] = True
     return settings
 
 
 def __get_generic_sampling_settings():
-    settings = DEFAULT_SETTINGS
+    settings = DEFAULT_SETTINGS.copy()
     settings["do_sample"] = True
     settings["top_k"] = 0
     settings['temperature'] = 0.7
@@ -38,14 +38,14 @@ def __get_generic_sampling_settings():
 
 
 def __get_top_k_sampling_settings():
-    settings = DEFAULT_SETTINGS
+    settings = DEFAULT_SETTINGS.copy()
     settings["do_sample"] = True
     settings['top_k'] = 50
     return settings
 
 
 def __get_p_nucleus_sampling_settings():
-    settings = DEFAULT_SETTINGS
+    settings = DEFAULT_SETTINGS.copy()
     settings["do_sample"] = True
     settings['top_p'] = 0.92
     settings['top_k'] = 0
@@ -72,7 +72,7 @@ def get_settings(method, custom_settings, logger):
 def get_custom_settings(custom_settings, logger):
 
     possible_keys = list(DEFAULT_SETTINGS.keys())
-    settings = DEFAULT_SETTINGS
+    settings = DEFAULT_SETTINGS.copy()
 
     for key, value in custom_settings.items():
 
