@@ -9,7 +9,7 @@ readme = (current_location / "README.md").read_text()
 setup(
     name = 'chattingtransformer',
     packages = ['chattingtransformer'],
-    version = '1.0.0',
+    version = '1.0.1',
     license='Apache 2.0',
     description = "GPT2 text generation with just two lines of code!",
     long_description= readme,
