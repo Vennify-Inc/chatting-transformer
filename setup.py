@@ -22,6 +22,7 @@ setup(
 
     install_requires=[
             'transformers>=3.1.0',
+            'torch>=1.6.0',
 
       ],
     classifiers=[
