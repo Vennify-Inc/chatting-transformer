@@ -1,16 +1,15 @@
+# Chatting Transformer
+
 <div align="center">
   <img src="assets/vennify_ai_logo.jpg" height="200">
 </div>
 
-# Chatting Transformer
 ### Easy text generation using state of the art NLP models.
-[![License: Apache](https://img.shields.io/badge/License-Apache-green.svg)]https://opensource.org/licenses/Apache-2.0)   [![Downloads](https://pepy.tech/badge/chattingtransformer)](https://pepy.tech/project/chattingtransformer)
+[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0) [![Downloads](https://pepy.tech/badge/chattingtransformer)](https://pepy.tech/project/chattingtransformer)
 
 Chatting Transformer is a Python library for generating text using GPT2. GPT-2 is a language model that was developed by OpenAI that specializes in generating text. By using Chatting Transformer, you can implement and use this model with just two lines of code. 
 
 ## Installation
-
-
 
 ```bash
 pip install chattingtransformer
