@@ -3,8 +3,6 @@ POSSIBLE_METHODS = ["greedy", "beam-search", "generic-sampling",
                     "top-k-sampling", "top-p-nucleus-sampling", "custom"]
 
 DEFAULT_SETTINGS = {
-    "max_length": 60,
-    "min_length":  10,
     "do_sample": False,
     "early_stopping": False,
     "num_beams": 1,
@@ -78,6 +76,8 @@ def get_custom_settings(custom_settings, logger):
 
         if key in possible_keys:
             settings[key] = value
+        elif key == "min_length" or key =="max_length":
+            logger.warning("min_length and max_length are now parameters for the generate_text method")
         else:
             logger.warning("\"%s\" is not a valid argument", key)
     return settings
