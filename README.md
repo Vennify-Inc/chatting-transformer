@@ -125,7 +125,7 @@ from chattingtransformer import ChattingGPT2
 gpt2 = ChattingGPT2("gpt2")
 text = "I think therefore I "
 
-result = gpt2.generate_text(text, min_length=5, max_length=500)```
+result = gpt2.generate_text(text, min_length=5, max_length=500)
 ```
 
 
