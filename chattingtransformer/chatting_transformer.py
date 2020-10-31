@@ -72,7 +72,7 @@ class ChattingGPT2():
 
         return True
 
-    def generate_text(self, text, combine=True, method="top-k-sampling", custom_settings=None):
+    def generate_text(self, text, combine=True, method="top-k-sampling", custom_settings=None, min_length=20, max_length=60):
         """
         :param text: starting text that the model uses to generate text with.
         :param: combine: if true, the starting text will be concatenated with the output.
@@ -90,8 +90,8 @@ class ChattingGPT2():
             settings = get_settings(method, custom_settings, self.logger)
             input_ids = self._generation_tokenizer.encode(text, return_tensors="pt")
             output = self._generation_model.generate(input_ids,
-                                                     min_length=settings['min_length'],
-                                                     max_length=settings['max_length'],
+                                                     min_length=min_length,
+                                                     max_length=max_length,
                                                      do_sample=settings['do_sample'],
                                                      early_stopping=settings['early_stopping'],
                                                      num_beams=settings['num_beams'],
