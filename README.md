@@ -98,8 +98,6 @@ You have the ability to modify all of the default text generation parameters at 
 from chattingtransformer import ChattingGPT2
 
 settings =  {  
-  "max_length": 100,  
-  "min_length":  10,  
   "do_sample": False,  
   "early_stopping": False,  
   "num_beams": 1,  
@@ -118,20 +116,16 @@ result = gpt2.generate_text(text, method = "custom", custom_settings = settings)
 
 ```
 
-### Modify Select Settings 
-You may only modify a subset of the settings. The rest of the parameters will use their default settings. 
+### Modify Length 
+You may modify the min and max length of the output using parameters within the generate_text method. 
 ```python
 from chattingtransformer import ChattingGPT2
 
-settings =  {  
-  "max_length": 200,  
-  "min_length": 100,   
- 
-}
+
 gpt2 = ChattingGPT2("gpt2")
 text = "I think therefore I "
 
-result = gpt2.generate_text(text, method = "custom", custom_settings = settings)```
+result = gpt2.generate_text(text, min_length=5, max_length=500)
 ```
 
 
