@@ -76,8 +76,10 @@ def get_custom_settings(custom_settings, logger):
 
         if key in possible_keys:
             settings[key] = value
-        elif key == "min_length" or key =="max_length":
-            logger.warning("min_length and max_length are now parameters for the generate_text method")
+        elif key == "min_length":
+            logger.warning("\"min_length\" is now parameters for the generate_text method")
+        elif key =="max_length":
+            logger.warning("\"max_length\" is now parameters for the generate_text method")
         else:
             logger.warning("\"%s\" is not a valid argument", key)
     return settings
