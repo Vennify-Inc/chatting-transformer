@@ -1,5 +1,6 @@
 import logging
 import logging.config
+import torch
 from transformers import AutoTokenizer, AutoModelForCausalLM
 
 from chattingtransformer.settings import POSSIBLE_METHODS
@@ -51,6 +52,15 @@ class ChattingGPT2():
             self._generation_model = AutoModelForCausalLM.from_pretrained(model_name,
                                                                           pad_token_id=pad_token_id)
             self.logger.info("Done loading \"%s\"", model_name)
+            self._device = torch.device(
+                "cuda" if torch.cuda.is_available()
+                else "cpu"
+            )
+
+            if self._device == 'cuda':
+                self._generation_model.to(self._device)
+            self.logger.info("Using model: %s", self._device)
+
 
             self.__is_valid = True
 
